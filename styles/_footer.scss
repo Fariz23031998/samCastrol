@@ -1,0 +1,147 @@
+.footer {
+   background-image: linear-gradient(135deg, #7761FF, #A394FF);
+
+   .footer_container {
+      padding: 40px 80px 0;
+
+      @include responsive(bigPhone) {
+         padding: 20px 40px 0;
+      }
+
+      .footer_copyright {
+         line-height: 2;
+         border-top: 1px solid #fff;
+         text-align: center;
+         font-size: 18px;
+         color: #fff;
+         font-weight: 400;
+
+         @include responsive(bigPhone) {
+            font-size: 14px;
+         }
+
+         .castrol {
+            color: $greenLogo
+         }
+      }
+
+      .footer_inner {
+         display: flex;
+         justify-content: space-between;
+         align-items: flex-start;
+
+         @include responsive(tab) {
+            flex-direction: column;
+         }
+
+         .footer_inner-items {
+            @include responsive(tab) {
+               margin-bottom: 30px;
+            }
+
+            a {
+               text-decoration: none;
+               color: $redLetter;
+               font-size: 18px;
+               font-weight: 700;
+               transition: all .5s ease;
+
+               @include responsive(bigPhone) {
+                  font-size: 14px;
+               }
+            }
+            ul {
+               margin: 0;
+               padding: 0;
+               li {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  a {
+                     text-decoration: none;
+                     color: #fff;
+                     font-size: 18px;
+                     font-weight: 300;
+                     transition: all .5s ease;
+                     margin: 0;
+
+                     
+                     @include responsive(bigPhone) {
+                        font-size: 14px;
+                     }
+
+                     &:nth-child(1) {
+                        margin-top: 0;
+                     }
+
+                     &:hover {
+                        color: $redLetter;
+
+                        @include responsive(tab) {
+                           color: #fff;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .footer_inner-items-each {
+               display: flex;
+               align-items: center;
+   
+               .logo_samcastrol {
+                  font-size: 24px;
+                  font-weight: 500;
+                  color: #fff;
+                  line-height: 0;
+
+                  @include responsive(bigPhone) {
+                     font-size: 18px;
+                  }
+
+                  span {
+                     color: $greenLogo;
+                  }
+               }
+   
+               
+               a {
+                  font-size: 18px;
+                  font-weight: 400;
+                  color: #fff;
+                  text-decoration: none;
+                  transition: color .5s ease;
+                  margin-bottom: 10px;
+
+                  
+                  @include responsive(bigPhone) {
+                     font-size: 14px;
+                  }
+   
+                  &:hover {
+                     color: $redLetter;
+
+                     @include responsive(tab) {
+                        color: #fff;
+                     }
+                  }
+                  img {
+                     margin: 0 10px;
+                  }
+               }
+   
+               p {
+                  font-size: 18px;
+                  color: #fff;
+                  font-weight: 400;
+
+                  
+                  @include responsive(bigPhone) {
+                     font-size: 14px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

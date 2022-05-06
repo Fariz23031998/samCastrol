@@ -1,0 +1,223 @@
+.main {
+   margin-bottom: 50px;
+}
+
+.wrapper {
+   width: 100%;
+   overflow: hidden;
+   position: relative;
+
+   &:hover .prev_btn,
+   &:hover .next_btn {
+      opacity: 1;
+   }
+
+   .slides_container {
+      height: 100vh;
+      transition: 900ms cubic-bezier(0.48, 0.15, 0.18, 1);
+      position: relative;
+      background-color: #000;
+
+      @include responsive(bigPhone) {
+         height: 60vh;
+      }
+
+      .slide {
+         height: 100vh;
+         width: 100vw;
+         position: absolute;
+         opacity: .9;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+
+         .slide_content {
+            opacity: 1;
+            top: 200px;
+            left: 200px;
+            position: absolute;
+            z-index: 200;
+            width: 600px;
+
+            @include responsive(tab) {
+               top: 250px;
+            }
+
+            @include responsive(mediumTab) {
+               left: 100px;
+               width: 400px;
+            }
+
+            @include responsive(bigPhone) {
+               left: 60px;
+               width: 350px;
+               top: 120px;
+            }
+
+            
+            @include responsive(phone) {
+               width: 300px;
+               left: 50px;
+            }
+
+            @include responsive(smallPhone) {
+               left: 40px;
+               width: 220px;
+            }
+
+
+            h1 {
+               font-size: 36px;
+               color: #f7ecec;
+
+               @include responsive(tab) {
+                  font-size: 24px;
+               }
+
+               @include responsive(bigPhone) {
+                  font-size: 20px;
+               }
+
+               @include responsive(phone) {
+                  font-size: 18px;
+               }
+            }
+
+            button {
+               background-color: $redButton;
+               border: none;
+               border-radius: 5px;
+               padding: 5px 10px;
+               cursor: pointer;
+               transition: all .5s ease;
+               @include responsive(tab) {
+                  padding: 2px 5px;
+               }
+               
+               a {
+                  text-decoration: none;
+                  color: #fff;
+                  font-size: 18px;
+                  font-weight: 500;
+                  @include responsive(tab) {
+                     font-size: 16px;
+                  }
+
+                  @include responsive(bigPhone) {
+                     font-size: 14px;
+                  }
+               }
+
+               &:hover {
+                  background-color: #54fc00;
+                  transform: scale(1.05);
+
+                  @include responsive(tab) {
+                     background-color: $redButton;
+                     transform: scale(1);
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .prev_btn,
+   .next_btn {
+      opacity: 0;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid #eee;
+      padding: 10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #eee;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      cursor: pointer;
+      transition: all .5s;
+
+      @include responsive(tab) {
+         opacity: 1;
+         padding: 5px;
+         font-size: 14px;
+      }
+
+      &:hover {
+         background-color: $redButton;
+         border-color: $redButton;
+
+         @include responsive(tab) {
+            background-color: transparent;
+            border-color: #eee;
+         }
+      }
+   }
+   .prev_btn {
+      left: 40px;
+
+      @include responsive(mediumTab) {
+         left: 20px;
+      }
+
+      @include responsive(bigPhone) {
+         left: 10px;
+      }
+   }
+
+   .next_btn {
+      right: 40px;
+
+      @include responsive(mediumTab) {
+         right: 20px;
+      }
+
+      @include responsive(bigPhone) {
+         right: 10px;
+      }
+
+   }
+}
+
+
+.navigation_dots {
+   position: absolute;
+   bottom: -50px;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   height: 32px;
+   align-items: center;
+   justify-content: center;
+   margin: 16px 0;
+
+   @include responsive(mediumTab) {
+      bottom: -220px;
+   }
+
+   @include responsive(bigPhone) {
+      top: 550px;
+   }
+
+   .single_dot {
+      background-color: #333;
+      height: 16px;
+      width: 16px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: all .5s;
+
+      &.active {
+         background-color: #eee;
+      }
+   }
+}
+
+

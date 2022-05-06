@@ -1,0 +1,75 @@
+*, *::before, *::after {
+   box-sizing: border-box;
+}
+
+@mixin responsive($breakpoint) {
+   @if $breakpoint == smallPhone {
+      @media only screen and (max-width: 350px) {@content};
+   }
+
+   @if $breakpoint == phone {
+       @media only screen and (max-width: 415px) {@content};
+   }
+
+   @if $breakpoint == bigPhone {
+      @media only screen and (max-width: 550px) {@content};
+   }
+
+    @if $breakpoint == mediumTab {
+       @media only screen and (max-width: 768px) {@content};
+    }
+ 
+    @if $breakpoint == tab {
+       @media only screen and (max-width: 1024px) {@content};
+   }
+   
+    @if $breakpoint ==  desktop {
+       @media only screen and (max-width: 1366px) {@content};
+    }
+ 
+    @if $breakpoint ==  bigDesktop {
+       @media only screen and (max-width: 1680px) {@content};
+   }
+ }
+
+body {
+   padding: 0;
+   margin: 0;
+   background: #fff;
+   font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+   margin: 0 80px;
+   @include responsive(phone) {
+      margin: 0 10px;
+   }
+   @include responsive(tab) {
+      margin: 0 20px;
+   }
+
+   &.product {
+      @include responsive(bigPhone) {
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+      }
+   }
+}
+
+@import "./variables";
+@import "./header";
+@import "./main";
+@import "./services";
+@import "./about";
+@import "./map";
+@import "./navProducts";
+@import "./productItems";
+@import "./footer";
+
+#main,
+#services,
+#about,
+#map {
+   scroll-behavior: smooth;
+}

@@ -1,0 +1,215 @@
+.about {
+   margin-bottom: 50px;
+}
+
+.heading {
+   font-size: 48px;
+   text-transform: uppercase;
+   color: $redLetter;
+   font-weight: 700;
+   text-align: center;
+
+   @include responsive(tab) {
+      font-size: 36px;
+   }
+
+   @include responsive(bigPhone) {
+      font-size: 24px;
+   }
+}
+
+.about_inner {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+   @include responsive(desktop) {
+      flex-direction: column;
+   }
+}
+
+.about_wrapper {
+   width: 600px;
+   height: 337px;
+   overflow: hidden;
+   position: relative;
+
+   @include responsive(mediumTab) {
+      width: 450px;
+      height: 252.75px;
+   }
+
+   @include responsive(bigPhone) {
+      width: 400px;
+      height: 224.666667px;
+   }
+
+   @include responsive(phone) {
+      width: 300px;
+      height: 168.5px;
+   }
+
+   .about_slides-container {
+      height: 100%;
+      transition: 900ms cubic-bezier(0.48, 0.15, 0.18, 1);
+      position: relative;
+
+      .about_slide {
+         height: 100%;
+         width: 100%;
+         position: absolute;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+
+   .about_prev-btn,
+   .about_next-btn {
+      opacity: .7;
+      background-color: $redButton;
+      border-radius: 50%;
+      border: 1px solid $redButton;
+      padding: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #eee;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      cursor: pointer;
+      transition: all .5s;
+
+      @include responsive(tab) {
+         background-color: transparent;
+         border-color: #eee;
+         opacity: .3;
+      }
+
+      @include responsive(bigPhone) {
+         font-size: 12px;
+         padding: 5px;
+      }
+   }
+   .about_prev-btn {
+      left: 20px;
+
+      @include responsive(bigPhone) {
+         left: 0px;
+      }
+   }
+
+   .about_next-btn {
+      right: 20px;
+
+      @include responsive(bigPhone) {
+         right: 0px;
+      }
+   }
+}
+
+
+.about_navigation-dots {
+   position: absolute;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   height: 32px;
+   align-items: center;
+   justify-content: center;
+   margin: 16px 0;
+   opacity: .5;
+
+   @include responsive(bigPhone) {
+      bottom: -10px;
+   }
+
+   .about_single-dot {
+      background-color: #333;
+      height: 12px;
+      width: 12px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: all .5s;
+
+      @include responsive(bigPhone) {
+         height: 8px;
+         width: 8px;
+      }
+
+      &.active {
+         background-color: #eee;
+      }
+   }
+}
+
+.about_inner-content {
+   width: 40%;
+   text-align: center;
+
+   @include responsive(desktop) {
+      width: 80%;
+   }
+
+   @include responsive(mediumTab) {
+      width: 100%;
+   }
+
+   h2 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #000;
+
+      @include responsive(bigPhone) {
+         font-size: 20px;
+      }
+   }
+
+   p {
+      color: #333;
+      font-size: 14px;
+      font-weight: 400;
+
+      @include responsive(bigPhone) {
+         font-size: 12px;
+      }
+   }
+
+   button {
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      background-color: $redButton;
+      transition: all .5s ease;
+      
+      @include responsive(bigPhone) {
+         padding: 5px 10px;
+      }
+      a {
+         text-decoration: none;
+         color: #fff;
+         font-size: 18px;
+         font-weight: 500;
+
+         @include responsive(bigPhone) {
+            font-size: 14px;
+         }
+      }
+
+      &:hover {
+         background-color: #54fc00;
+         transform: scale(1.05);
+         @include responsive(tab) {
+            background-color: $redButton;
+            transform: scale(1);
+         }
+      }
+   }
+}

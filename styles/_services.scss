@@ -1,0 +1,128 @@
+.services {
+   margin-bottom: 50px;
+}
+
+.services_inner {
+   h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: $redLetter;
+      text-align: center;
+
+      @include responsive(tab) {
+         font-size: 36px;
+      }
+
+      @include responsive(bigPhone) {
+         font-size: 24px;
+      }
+   }
+   &-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      @include responsive(tab) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include responsive(phone) {
+         grid-template-columns: 1fr;
+      }
+
+      &-each {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         margin: 0 auto;
+         transition: all .5s ease;
+
+         img {
+            margin-bottom: 5px;
+
+            @include responsive(desktop) {
+               width: 197.33px;
+            }
+
+            @include responsive(bigPhone) {
+               width: 148px;
+            }
+
+            @include responsive(phone) {
+               width: 197.33px;
+            }
+         }
+
+         &:hover {
+            transform: scale(1.02);
+         }
+
+         &:hover .services_inner-items-each-square {
+            background-color: $redBackground;
+         }
+
+         &:hover .services_inner-items-each-square p {
+            color: #fff;
+         }
+
+         &:nth-child(1),
+         &:nth-child(2),
+         &:nth-child(3),
+         &:nth-child(4) {
+            margin-bottom: 75px;
+
+            @include responsive(desktop) {
+               margin-bottom: 40px;
+            }
+         }
+
+         &:nth-child(6),
+         &:nth-child(5) {
+            @include responsive(tab) {
+               margin-bottom: 40px;
+            }
+         }
+
+         &:nth-child(7) {
+            @include responsive(phone) {
+               margin-bottom: 40px;
+            }
+         }
+
+         &-square {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid $redBackground;
+            text-align: center;
+            transition: all .5s ease;
+
+            @include responsive(desktop) {
+               width: 200px;
+               height: 200px;
+            }
+
+            @include responsive(bigPhone) {
+               width: 150px;
+               height: 150px;
+            }
+
+            @include responsive(phone) {
+               width: 200px;
+               height: 200px;
+            }
+
+            p {
+               color: $redLetter;
+               font-size: 24px;
+               font-weight: 500;
+
+               @include responsive(mediumTab) {
+                  font-size: 20px;
+               }
+            }
+         }
+      }
+   }
+}

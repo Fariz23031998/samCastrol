@@ -1,0 +1,190 @@
+.header {
+   @include responsive(mediumTab) {
+      display: flex;
+      flex-direction: column-reverse;
+   }
+}
+
+.upper_nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   @include responsive(mediumTab) {
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 15px;
+   }
+   &-item {
+      display: flex;
+      align-items: center;
+      @include responsive(mediumTab) {
+         justify-content: center;
+         margin-bottom: 15px;
+      }
+      p {
+         margin-left: 10px;
+         color: $redLetter;
+         font-weight: 500;
+         line-height: 0;
+         font-size: 18px;
+         @include responsive(tab) {
+            font-size: 14px;
+         }
+      }
+
+      #uzbek {
+         color: #08f800;
+      }
+
+      #russian, 
+      #uzbek {
+         cursor: pointer;
+         transition: all .3s ease;
+         &:hover {
+            color: #333;
+         }
+      }
+
+      a {
+         margin-left: 10px;
+         color: $redLetter;
+         font-weight: 500;
+         text-decoration: none;
+         line-height: 0;
+         font-size: 18px;
+         @include responsive(tab) {
+            font-size: 14px;
+         }
+      }
+   }
+}
+
+.nav {
+   background-color: #FF0000;
+
+   &.fixed {
+      position: fixed;
+      z-index: 1001;
+      width: 100%;
+      top: 0;
+   }
+
+   &_inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+     &-logo {
+        display: flex;
+        align-items: center;
+
+        img {
+         @include responsive(mediumTab) {
+            width: 20px;
+            height: 16px;
+         }
+        }
+
+        p {
+           color: #fff;
+           line-height: 0;
+           font-size: 18px;
+
+            @include responsive(tab) {
+               font-size: 14px;
+            }
+
+           span {
+              color: $greenLogo;
+           }
+        }
+     }
+     
+     &-menu {
+      @include responsive(mediumTab) {
+         background-color: #333;
+         position: absolute;
+         width: 100vw;
+         height: 30vh;
+         left: -100%;
+         top: 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: all .2s ease;
+         z-index: 1000;
+      }
+      & ul {
+         display: flex;
+         align-items: center;
+         line-height: 0;
+   
+         @include responsive(mediumTab) {
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 0;
+            z-index: 100;
+            line-height: 0.5;
+         }
+   
+           li {
+              list-style: none;
+
+              @include responsive(mediumTab) {
+                  margin: 20px 0px;
+              }     
+   
+              .nav_inner-menu-link {
+                 color: #fff;
+                 font-size: 16px;
+                 text-decoration: none;
+                 margin-left: 50px;
+                 transition: all .5s ease;
+
+                 @include responsive(mediumTab) {
+                    margin-left: 0;
+                 }
+
+                 @include responsive(mediumTab) {
+                  font-size: 14px;
+                 }
+   
+                 &:hover {
+                    color: #333;
+                    @include responsive(tab) {
+                     color: #fff;
+                    }
+                 }
+              }
+           }
+        }
+
+        .close_btn {
+           display: none;
+           color: $redLetter;
+           background: none;
+           border: none;
+           font-weight: 500;
+           font-size: 18px;
+           position: absolute;
+           right: 20px;
+           top: 5px;
+         @include responsive(mediumTab) {
+            display: inline-block;
+         }    
+        }
+     }
+
+     .hamburger_btn {
+        display: none;
+        background-color: transparent;
+        color: #fff;
+        font-size: 14px;
+        border: none;
+
+        @include responsive(mediumTab) {
+         display: inline-block;
+        }
+     }
+   }
+}

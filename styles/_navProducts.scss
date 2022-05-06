@@ -1,0 +1,59 @@
+.nav_products {
+   background-color: $redBackground;
+
+   .nav_products-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-logo {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         img {
+            @include responsive(mediumTab) {
+               width: 20px;
+               height: 16px;
+            }
+           }
+   
+           p {
+              color: #fff;
+              line-height: 0;
+              font-size: 18px;
+   
+               @include responsive(tab) {
+                  font-size: 14px;
+               }
+   
+              span {
+                 color: $greenLogo;
+              }
+           }
+      }
+
+      &-menu {
+         a {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 400;
+            transition: all .5s ease;
+            text-decoration: none;
+
+            @include responsive(mediumTab) {
+               font-size: 14px;
+            }
+
+            &:hover {
+               color: $blackLetter;
+               @include responsive(mediumTab) {
+                  color: #fff;
+               }
+            }
+         }
+      }
+   }
+}
+
+   
